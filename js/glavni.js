@@ -1,4 +1,3 @@
-// ===== DOM učitavanje =====
 document.addEventListener('DOMContentLoaded', function() {
     primeniPodesavanja();
     
@@ -6,19 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
         inicijalizujSlajder();
     }
 
-    // ===== Hamburger meni =====
     const hamburger = document.querySelector('.hamburger');
     const navUl = document.querySelector('nav ul');
     
     if (hamburger && navUl) {
-        // Klik na hamburger
         hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
             navUl.classList.toggle('open');
             this.classList.toggle('active');
         });
 
-        // Zatvori meni kada se klikne van njega
         document.addEventListener('click', function(e) {
             if (!e.target.closest('header')) {
                 navUl.classList.remove('open');
@@ -26,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Zatvori meni kada se klikne na link
         navUl.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 navUl.classList.remove('open');
@@ -35,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== Padajući meni na mobilnim uređajima =====
     const padajuciMeni = document.querySelectorAll('.padajuci-meni');
     padajuciMeni.forEach(item => {
         const link = item.querySelector('a');
@@ -45,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    // Zatvori sve ostale padajuće menije
                     padajuciMeni.forEach(other => {
                         if (other !== item) {
                             other.classList.remove('open');
@@ -58,20 +51,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ===== Pristupačnost: Tema =====
 function promeniTemu() {
     document.body.classList.toggle('tamna-tema');
     const jeTamna = document.body.classList.contains('tamna-tema');
     localStorage.setItem('tamnaTema', JSON.stringify(jeTamna));
-    
-    // Promeni tekst na dugmetu
+
     const dugme = document.querySelector('.dugme-pristupacnost[onclick="promeniTemu()"]');
     if (dugme) {
         dugme.textContent = jeTamna ? 'S' : 'T';
     }
 }
 
-// ===== Zoom (zumiranje) =====
 let trenutniZoom = 1.0;
 const MIN_ZOOM = 0.8;
 const MAX_ZOOM = 1.5;
@@ -120,14 +110,12 @@ function resetujZoom() {
     localStorage.removeItem('zoomNivo');
 }
 
-// ===== Primeni sačuvana podešavanja =====
 function primeniPodesavanja() {
     const sacuvanaTema = localStorage.getItem('tamnaTema');
     const sacuvaniZoom = localStorage.getItem('zoomNivo');
 
     if (sacuvanaTema === 'true') {
         document.body.classList.add('tamna-tema');
-        // Postavi tekst na dugmetu
         const dugme = document.querySelector('.dugme-pristupacnost[onclick="promeniTemu()"]');
         if (dugme) {
             dugme.textContent = 'S';
@@ -143,7 +131,6 @@ function primeniPodesavanja() {
     }
 }
 
-// ===== Slajder =====
 let trenutniSlajd = 0;
 let slajderInterval = null;
 
