@@ -1,0 +1,113 @@
+/* Prilagođavanje Bootstrap klasa za naš sajt */
+
+/* Tamna tema za Bootstrap elemente */
+.tamna-tema .card {
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+    border-color: #444;
+}
+
+.tamna-tema .card .card-title,
+.tamna-tema .card .card-text {
+    color: #f0f0f0;
+}
+
+.tamna-tema .form-control,
+.tamna-tema .form-select {
+    background-color: #3d3d3d;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+.tamna-tema .form-control:focus,
+.tamna-tema .form-select:focus {
+    background-color: #3d3d3d;
+    color: #f0f0f0;
+}
+
+.tamna-tema .form-label {
+    color: #f0f0f0;
+}
+
+.tamna-tema .alert {
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+}
+
+.tamna-tema .dropdown-menu {
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+}
+
+.tamna-tema .dropdown-item {
+    color: #f0f0f0;
+}
+
+.tamna-tema .dropdown-item:hover {
+    background-color: #ffc107;
+    color: #000;
+}
+
+/* Prilagođenje za hamburger meni */
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Prilagođenje za badge */
+.badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Prilagođenje za dugmad */
+.btn {
+    border-radius: 8px;
+}
+
+/* Animacija za Bootstrap kartice */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Prilagođenje za select */
+.form-select {
+    cursor: pointer;
+}
+
+/* Prilagođenje za checkbox */
+.form-check-input:checked {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.form-check-input:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.3);
+}
+
+/* Prilagođenje za sliku u kartici */
+.card-img-top {
+    border-radius: 12px 12px 0 0;
+}
+
+/* Responsivnost za Bootstrap grid */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    
+    .col-md-3, .col-md-4, .col-md-6, .col-md-8, .col-md-12 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
