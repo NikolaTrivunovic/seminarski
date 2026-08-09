@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pametna rasveta - profesionalna ugradnja pametnih sistema osvetljenja, dimera, senzora i upravljanja bojom.">
+    <meta name="keywords" content="pametna rasveta, pametne sijalice, dimeri, senzori pokreta, led trake, smart lighting">
+    <title>Pametna Rasveta | Pametna Kuća</title>
+    <link rel="stylesheet" href="css/stil.css">
+    <link rel="icon" href="assets/slike/logo.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="zaglavlje-kontejner">
+            <a href="index.html" class="logo-link">
+                <img src="assets/slike/logo.png" alt="Pametna Kuća Logo" height="50">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="o-nama.html">O nama</a></li>
+                    <li class="padajuci-meni">
+                        <a href="usluge.html" class="active">Usluge i Proizvodi</a>
+                        <div class="padajuci-sadrzaj">
+                            <a href="usluge-rasveta.html">Pametna Rasveta</a>
+                            <a href="usluge-bezbednost.html">Bezbednost</a>
+                            <a href="usluge-klima.html">Klimatizacija</a>
+                            <a href="usluge-roletne.html">Automatizacija roletni</a>
+                            <a href="usluge-konsultacije.html">Konsultacije</a>
+                        </div>
+                    </li>
+                    <li><a href="kalkulator.html">Kalkulator</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="kontrole-pristupacnosti">
+                <button class="dugme-pristupacnost" onclick="promeniTemu()" aria-label="Promena teme">T</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('out')" aria-label="Smanji zum">−</button>
+                <button class="dugme-pristupacnost" onclick="resetujZoom()" aria-label="Resetuj zum">100%</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('in')" aria-label="Povećaj zum">+</button>
+            </div>
+            <button class="hamburger" onclick="toggleMeni()" aria-label="Meni">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="glavni-sadrzaj">
+        <nav class="breadcrumb">
+            <a href="index.html">Početna</a> &gt; 
+            <a href="usluge.html">Usluge</a> &gt; 
+            <span>Pametna Rasveta</span>
+        </nav>
+
+        <h1>Pametna Rasveta</h1>
+        <p class="podnaslov">Revolucionirajte način na koji osvetljavate svoj dom ili poslovni prostor.</p>
+
+        <div class="usluga-detalji">
+            <div class="usluga-slika">
+                <img src="assets/slike/rasveta.png" alt="Pametna rasveta">
+            </div>
+            <div class="usluga-tekst">
+                <h2>Šta nudi pametna rasveta?</h2>
+                <p>Pametna rasveta omogućava potpunu kontrolu nad osvetljenjem u vašem domu. Bilo da želite da kreirate savršenu atmosferu za večeru, povećate produktivnost u radnom prostoru ili uštedite energiju, naša rešenja su prilagođena vašim potrebama.</p>
+                
+                <h3>Ključne karakteristike:</h3>
+                <ul class="karakteristike-lista">
+                    <li><strong>Daljinsko upravljanje</strong> - Kontrolišite svetla putem mobilne aplikacije sa bilo kog mesta</li>
+                    <li><strong>Podešavanje boje i jačine</strong> - Birajte između miliona boja i nijansi bele svetlosti</li>
+                    <li><strong>Automatske scene</strong> - Programirajte različite režime osvetljenja za različite aktivnosti</li>
+                    <li><strong>Senzori pokreta</strong> - Svetla se automatski pale kada uđete u prostoriju</li>
+                    <li><strong>Glasovne komande</strong> - Integracija sa Google Assistant, Amazon Alexa i Apple HomeKit</li>
+                    <li><strong>Ušteda energije</strong> - Do 80% manja potrošnja u odnosu na tradicionalne sijalice</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="usluga-ponuda">
+            <h2>Naša ponuda</h2>
+            <div class="ponuda-mreza">
+                <div class="ponuda-kartica">
+                    <h3>Pametne sijalice</h3>
+                    <p>Zamena klasičnih sijalica pametnim LED sijalicama koje podržavaju promenu boje i jačine svetla.</p>
+                    <span class="cena">od 25 EUR</span>
+                </div>
+                <div class="ponuda-kartica">
+                    <h3>LED trake</h3>
+                    <p>Fleksibilne LED trake za dekorativno osvetljenje, idealne za kuhinje, police i stepenice.</p>
+                    <span class="cena">od 40 EUR</span>
+                </div>
+                <div class="ponuda-kartica">
+                    <h3>Dimeri i prekidači</h3>
+                    <p>Pametni prekidači i dimeri koji omogućavaju glatko podešavanje jačine svetla.</p>
+                    <span class="cena">od 35 EUR</span>
+                </div>
+                <div class="ponuda-kartica">
+                    <h3>Senzori pokreta</h3>
+                    <p>Automatsko uključivanje/isključivanje svetla na osnovu prisustva u prostoriji.</p>
+                    <span class="cena">od 30 EUR</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="usluga-galerija">
+            <h2>Galerija projekata</h2>
+            <div class="galerija-mreza">
+                <img src="assets/slike/svetlo_soba.png" alt="Pametna rasveta u dnevnoj sobi">
+                <img src="assets/slike/svetlo_kuhinja.webp" alt="LED trake u kuhinji">
+                <img src="assets/slike/svetlo_napolju.png" alt="Spoljna rasveta">
+            </div>
+        </section>
+
+        <section class="usluga-akcija">
+            <h2>Zainteresovani ste?</h2>
+            <p>Izračunajte trošak instalacije</p>
+            <a href="kalkulator.html" class="dugme-primarno">Izračunaj trošak</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-sadrzaj">
+            <div>
+                <h4>Pametna Kuća DOO</h4>
+                <p>20. oktobra 11, Zrenjanin</p>
+                <p>Tel: +381 62 8975315</p>
+                <p>Email: info@pametnakuca.rs</p>
+            </div>
+            <div>
+                <h4>Brzi linkovi</h4>
+                <a href="index.html">Početna</a>
+                <a href="o-nama.html">O nama</a>
+                <a href="usluge.html">Usluge</a>
+                <a href="kalkulator.html">Kalkulator</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div>
+                <h4>Radno vreme</h4>
+                <p>Pon - Pet: 09:00 - 18:00</p>
+                <p>Subota: 10:00 - 14:00</p>
+                <p>Nedelja: Zatvoreno</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Pametna Kuća DOO. Sva prava zadržana.</p>
+    </footer>
+
+    <script src="js/glavni.js"></script>
+    <script src="js/validacija.js"></script>
+</body>
+</html>

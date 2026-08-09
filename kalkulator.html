@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interaktivni kalkulator troškova instalacije smart home opreme napravljen u React frameworku.">
+    <meta name="keywords" content="kalkulator, cena, smart home, instalacija, procena, react">
+    <title>Kalkulator | Pametna Kuća</title>
+    <link rel="stylesheet" href="css/stil.css">
+    <link rel="icon" href="assets/slike/logo.png" type="image/png">
+    
+        <script src="assets/react/react.development.js"></script>
+        <script src="assets/react/react-dom.development.js"></script>
+        <script src="assets/react/babel.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="zaglavlje-kontejner">
+            <a href="index.html" class="logo-link">
+                <img src="assets/slike/logo.png" alt="Pametna Kuća Logo" height="50">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="o-nama.html">O nama</a></li>
+                    <li class="padajuci-meni">
+                        <a href="usluge.html">Usluge i Proizvodi</a>
+                        <div class="padajuci-sadrzaj">
+                            <a href="usluge-rasveta.html">Pametna Rasveta</a>
+                            <a href="usluge-bezbednost.html">Bezbednost</a>
+                            <a href="usluge-klima.html">Klimatizacija</a>
+                            <a href="usluge-roletne.html">Pametne Roletne</a>
+                            <a href="usluge-konsultacije.html">Konsultacije</a>
+                        </div>
+                    </li>
+                    <li><a href="kalkulator.html" class="active">Kalkulator</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="kontrole-pristupacnosti">
+                <button class="dugme-pristupacnost" onclick="promeniTemu()" aria-label="Promena teme">T</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('out')" aria-label="Smanji zum">−</button>
+                <button class="dugme-pristupacnost" onclick="resetujZoom()" aria-label="Resetuj zum">100%</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('in')" aria-label="Povećaj zum">+</button>
+            </div>
+            <button class="hamburger" onclick="toggleMeni()" aria-label="Meni">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="glavni-sadrzaj">
+        <h1>Kalkulator Troškova Instalacije</h1>
+        <p>Izračunajte okvirnu cenu opreme i instalacije smart home sistema prilagođenog vašim potrebama.</p>
+
+        <div id="react-koren"></div>
+    </main>
+
+    <footer>
+        <div class="footer-sadrzaj">
+            <div>
+                <h4>Pametna Kuća DOO</h4>
+                <p>20. oktobra 11, Zrenjanin</p>
+                <p>Tel: +381 62 8975315</p>
+                <p>Email: info@pametnakuca.rs</p>
+            </div>
+            <div>
+                <h4>Brzi linkovi</h4>
+                <a href="index.html">Početna</a>
+                <a href="o-nama.html">O nama</a>
+                <a href="usluge.html">Usluge</a>
+                <a href="kalkulator.html">Kalkulator</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div>
+                <h4>Radno vreme</h4>
+                <p>Pon - Pet: 09:00 - 18:00</p>
+                <p>Subota: 10:00 - 14:00</p>
+                <p>Nedelja: Zatvoreno</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Pametna Kuća DOO. Sva prava zadržana.</p>
+    </footer>
+
+    <script src="js/glavni.js"></script>
+
+    <!-- React Komponenta -->
+    <script type="text/babel">
+    function KalkulatorTroskova() {
+        const [kvadratura, setKvadratura] = React.useState(60);
+        const [brojProstorija, setBrojProstorija] = React.useState(3);
+        const [izabranaRasveta, setIzabranaRasveta] = React.useState(true);
+        const [izabranaBezbednost, setIzabranaBezbednost] = React.useState(false);
+        const [izabranaKlimatizacija, setIzabranaKlimatizacija] = React.useState(true);
+        const [izabraneRoletne, setIzabraneRoletne] = React.useState(false);
+        const [prikazanaCena, setPrikazanaCena] = React.useState(null);
+
+        const izracunajUkupno = () => {
+            let osnova = kvadratura * 5;
+            let poProstoriji = brojProstorija * 50;
+            
+            let dodatno = 0;
+            if (izabranaRasveta) dodatno += 150;
+            if (izabranaBezbednost) dodatno += 300;
+            if (izabranaKlimatizacija) dodatno += 200;
+            if (izabraneRoletne) dodatno += 250;  // <-- Dodato za roletne
+
+            const ukupno = osnova + poProstoriji + dodatno;
+            setPrikazanaCena(ukupno);
+        };
+
+        return (
+            <div className="kalkulator-kontejner">
+                <h2>Prilagodi Opcije Projekta</h2>
+
+                <div className="kalkulator-grupa">
+                    <label>
+                        Kvadratura objekta: <strong>{kvadratura} m²</strong>
+                    </label>
+                    <input 
+                        type="range" 
+                        min="20" 
+                        max="300" 
+                        value={kvadratura} 
+                        onChange={(e) => setKvadratura(Number(e.target.value))}
+                        className="range-slider"
+                    />
+                </div>
+
+                <div className="kalkulator-grupa">
+                    <label>
+                        Broj prostorija: <strong>{brojProstorija}</strong>
+                    </label>
+                    <input 
+                        type="number" 
+                        min="1" 
+                        max="15" 
+                        value={brojProstorija} 
+                        onChange={(e) => setBrojProstorija(Number(e.target.value))}
+                        className="forma-kontrola"
+                    />
+                </div>
+
+                <div className="kalkulator-opcije">
+                    <h3>Sistemi i Moduli:</h3>
+                    
+                    <label className="opcija-checkbox">
+                        <input 
+                            type="checkbox" 
+                            checked={izabranaRasveta} 
+                            onChange={(e) => setIzabranaRasveta(e.target.checked)}
+                        />
+                        Pametna rasveta (moduli i dimeri)
+                    </label>
+
+                    <label className="opcija-checkbox">
+                        <input 
+                            type="checkbox" 
+                            checked={izabranaBezbednost} 
+                            onChange={(e) => setIzabranaBezbednost(e.target.checked)}
+                        />
+                        Bezbednosni sistem (alarmi i nadzor)
+                    </label>
+
+                    <label className="opcija-checkbox">
+                        <input 
+                            type="checkbox" 
+                            checked={izabranaKlimatizacija} 
+                            onChange={(e) => setIzabranaKlimatizacija(e.target.checked)}
+                        />
+                        Pametno upravljanje grejanjem / klimom
+                    </label>
+
+                    <label className="opcija-checkbox">
+                        <input 
+                            type="checkbox" 
+                            checked={izabraneRoletne} 
+                            onChange={(e) => setIzabraneRoletne(e.target.checked)}
+                        />
+                        Automatizacija roletni i žaluzina
+                    </label>
+                </div>
+
+                <button className="dugme-primarno" onClick={izracunajUkupno}>
+                    Izračunaj cenu
+                </button>
+
+                {prikazanaCena !== null && (
+                    <div className="kalkulator-rezultat">
+                        <strong>Procenjena cena projekta i ugradnje:</strong>
+                        <span className="cena-iznos">{prikazanaCena} EUR</span>
+                        <p className="cena-napomena">* Ovo je okvirna procena. Tačna cena zavisi od specifičnih zahteva.</p>
+                    </div>
+                )}
+            </div>
+        );
+    }
+
+    const koren = ReactDOM.createRoot(document.getElementById('react-koren'));
+    koren.render(<KalkulatorTroskova />);
+</script>
+
+        const koren = ReactDOM.createRoot(document.getElementById('react-koren'));
+        koren.render(<KalkulatorTroskova />);
+    </script>
+</body>
+</html>

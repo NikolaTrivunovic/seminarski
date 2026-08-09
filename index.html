@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pametna Kuća - Profesionalna instalacija smart home sistema i uređaja. Automatizacija doma, video nadzor, pametni termostati.">
+    <meta name="keywords" content="pametna kuca, smart home, automatizacija, video nadzor, pametni termostat, instalacija, beograd">
+    <meta name="author" content="Pametna Kuća DOO">
+    <meta property="og:title" content="Pametna Kuća - Instalacija smart home sistema">
+    <meta property="og:description" content="Profesionalna ugradnja pametnih sistema za vaš dom ili poslovni prostor.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <title>Pametna Kuća | Početna</title>
+    <link rel="stylesheet" href="css/stil.css">
+    <link rel="icon" href="assets/slike/logo.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="zaglavlje-kontejner">
+            <a href="index.html" class="logo-link">
+                <img src="assets/slike/logo.png" alt="Pametna Kuća Logo" height="50">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Početna</a></li>
+                    <li><a href="o-nama.html">O nama</a></li>
+                    <li class="padajuci-meni">
+                        <a href="usluge.html">Usluge i Proizvodi</a>
+                        <div class="padajuci-sadrzaj">
+                            <a href="usluge-rasveta.html">Pametna Rasveta</a>
+                            <a href="usluge-bezbednost.html">Bezbednost</a>
+                            <a href="usluge-klima.html">Klimatizacija</a>
+                            <a href="usluge-roletne.html">Pametne Roletne</a>
+                            <a href="usluge-konsultacije.html">Konsultacije</a>
+                        </div>
+                    </li>
+                    <li><a href="kalkulator.html">Kalkulator</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="kontrole-pristupacnosti">
+                <button class="dugme-pristupacnost" onclick="promeniTemu()" aria-label="Promena teme">T</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('out')" aria-label="Smanji zum">−</button>
+                <button class="dugme-pristupacnost" onclick="resetujZoom()" aria-label="Resetuj zum">100%</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('in')" aria-label="Povećaj zum">+</button>
+            </div>
+            <button class="hamburger" onclick="toggleMeni()" aria-label="Meni">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="glavni-sadrzaj">
+        <section class="sekcija-hero">
+            <h1>Dobrodošli u budućnost stanovanja</h1>
+            <p>Profesionalna ugradnja i podešavanje pametnih sistema za vaš dom ili poslovni prostor.</p>
+            <a href="kontakt.html" class="dugme-primarno" style="display:inline-block; margin-top:1rem;">Zatražite ponudu</a>
+        </section>
+
+        <!-- Slajder Slika -->
+        <div class="slajder-kontejner">
+            <div class="slajder-slike">
+                <img src="assets/slike/slajd1.jpeg" class="slajd" alt="Pametna Rasveta - upravljanje osvetljenjem">
+                <img src="assets/slike/slajd2.png" class="slajd" alt="Sigurnosni Sistemi - video nadzor i alarmi">
+                <img src="assets/slike/slajd3.jpeg" class="slajd" alt="Klimatizacija i Grejanje - pametni termostati">
+            </div>
+            <button class="slajder-dugme levo" onclick="pomeriSlajd(-1)">&#10094;</button>
+            <button class="slajder-dugme desno" onclick="pomeriSlajd(1)">&#10095;</button>
+            <div class="slajder-indikatori">
+                <span class="indikator active" data-slide="0"></span>
+                <span class="indikator" data-slide="1"></span>
+                <span class="indikator" data-slide="2"></span>
+            </div>
+        </div>
+
+        <section class="multimedija-sekcija">
+            <h2>Predstavljanje naših rešenja</h2>
+            <p>Pogledajte kratak video o tome kako pametni sistemi mogu povećati komfor i smanjiti potrošnju energije.</p>
+            
+            <div class="multimedija-mreza">
+                <div>
+                    <h3>Promotivni Video</h3>
+                    <video controls poster="assets/slike/slajd1.svg">
+                        <source src="assets/video/predstavljanje.mp4" type="video/mp4">
+                        Vaš pregledač ne podržava video element.
+                    </video>
+                </div>
+                    <div>
+                        <h3>Video sa YouTube-a</h3>
+                        <div class="video-okvir">
+                            <iframe width="100%" height="400" 
+                                src="https://www.youtube.com/embed/cMP8k308iBs"
+                                title="Pametni domovi ulaze u novu AI eru" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dokument-sekcija">
+            <h2>Katalog i Dokumentacija</h2>
+            <p>Preuzmite naš kompletan zvanični katalog usluga i cenovnik u PDF formatu:</p>
+            <a href="assets/dokumenti/katalog_usluga.pdf" download class="dugme-sekundarno"> Preuzmi Katalog Usluga (PDF)</a>
+        </section>
+
+        <!-- Google Maps -->
+        <section class="mapa-sekcija">
+            <h2>Gde se nalazimo</h2>
+            <div class="mapa-okvir">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2802.3442728027417!2d20.36821477575499!3d45.38222563890521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475adb740a7e9d41%3A0xc0e5f35a210651fe!2zMjAuINC-0LrRgtC-0LHRgNCwIDExLCDQl9GA0LXRmtCw0L3QuNC9!5e0!3m2!1ssr!2srs!4v1785945930423!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-sadrzaj">
+            <div>
+                <h4>Pametna Kuća DOO</h4>
+                <p>s Zrenjanin</p>
+                <p>Tel: +381 62 8975315</p>
+                <p>Email: info@pametnakuca.rs</p>
+            </div>
+            <div>
+                <h4>Brzi linkovi</h4>
+                <a href="index.html">Početna</a>
+                <a href="o-nama.html">O nama</a>
+                <a href="usluge.html">Usluge</a>
+                <a href="kalkulator.html">Kalkulator</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div>
+                <h4>Radno vreme</h4>
+                <p>Pon - Pet: 09:00 - 18:00</p>
+                <p>Subota: 10:00 - 14:00</p>
+                <p>Nedelja: Zatvoreno</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Pametna Kuća DOO. Sva prava zadržana.</p>
+    </footer>
+
+    <script src="js/glavni.js"></script>
+</body>
+</html>

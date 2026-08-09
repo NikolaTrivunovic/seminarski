@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktirajte nas za konsultacije i ponudu ugradnje pametnih sistema. Popunite formu ili nas pozovite.">
+    <meta name="keywords" content="kontakt, pametna kuca, smart home, ponuda, konsultacije, beograd">
+    <title>Kontakt | Pametna Kuća</title>
+    <link rel="stylesheet" href="css/stil.css">
+    <link rel="icon" href="assets/slike/logo.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="zaglavlje-kontejner">
+            <a href="index.html" class="logo-link">
+                <img src="assets/slike/logo.png" alt="Pametna Kuća Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="o-nama.html">O nama</a></li>
+                    <li class="padajuci-meni">
+                        <a href="usluge.html">Usluge i Proizvodi</a>
+                        <div class="padajuci-sadrzaj">
+                            <a href="usluge-rasveta.html">Pametna Rasveta</a>
+                            <a href="usluge-bezbednost.html">Bezbednost</a>
+                            <a href="usluge-klima.html">Klimatizacija</a>
+                            <a href="usluge-roletne.html">Automatizacija roletni</a>
+                            <a href="usluge-konsultacije.html">Konsultacije</a>
+                        </div>
+                    </li>
+                    <li><a href="kalkulator.html">Kalkulator</a></li>
+                    <li><a href="kontakt.html" class="active">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="kontrole-pristupacnosti">
+                <button class="dugme-pristupacnost" onclick="promeniTemu()" aria-label="Promena teme">T</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('out')" aria-label="Smanji zum">−</button>
+                <button class="dugme-pristupacnost" onclick="resetujZoom()" aria-label="Resetuj zum">100%</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('in')" aria-label="Povećaj zum">+</button>
+            </div>
+            <button class="hamburger" onclick="toggleMeni()" aria-label="Meni">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="glavni-sadrzaj">
+        <h1>Kontaktirajte Naš Tim</h1>
+        <p class="podnaslov">Popunite formu u nastavku i naši inženjeri će vam se javiti u najkraćem roku sa ponudom.</p>
+
+        <!-- Kontakt Mreža: Forma levo | Info desno -->
+        <div class="kontakt-mreza">
+            <!-- Leva strana: Forma -->
+            <div class="kontakt-forma">
+                <form id="kontaktForma">
+                    <div class="forma-grupa">
+                        <label for="imePrezime">Ime i Prezime</label>
+                        <input type="text" id="imePrezime" class="forma-kontrola" placeholder="Unesite vaše ime i prezime">
+                        <div id="imeGreska" class="poruka-greske"></div>
+                    </div>
+
+                    <div class="forma-grupa">
+                        <label for="emailAdresa">E-mail Adresa</label>
+                        <input type="email" id="emailAdresa" class="forma-kontrola" placeholder="Unesite vašu email adresu">
+                        <div id="emailGreska" class="poruka-greske"></div>
+                    </div>
+
+                    <div class="forma-grupa">
+                        <label for="telefonBroj">Broj Telefona</label>
+                        <input type="text" id="telefonBroj" class="forma-kontrola" placeholder="Unesite vaš broj telefona">
+                        <div id="telefonGreska" class="poruka-greske"></div>
+                    </div>
+
+                    <div class="forma-grupa">
+                        <label for="porukaTekst">Vaša Poruka / Upit za projekat</label>
+                        <textarea id="porukaTekst" class="forma-kontrola" rows="5" placeholder="Opišite šta vas zanima..."></textarea>
+                        <div id="porukaGreska" class="poruka-greske"></div>
+                    </div>
+
+                    <button type="submit" class="dugme-primarno">Pošalji Upit</button>
+                </form>
+            </div>
+
+            <div class="kontakt-info">
+                <div class="info-kartica">
+                    <h3>Kontakt informacije</h3>
+                    
+                    <div class="info-stavka">
+                        <div>
+                            <strong>Adresa</strong>
+                            <p>20. oktobra 11, Zrenjanin</p>
+                        </div>
+                    </div>
+
+                    <div class="info-stavka">
+                        <div>
+                            <strong>Telefon</strong>
+                            <p>+381 62 8975315</p>
+                        </div>
+                    </div>
+
+                    <div class="info-stavka">
+                        <div>
+                            <strong>Email</strong>
+                            <p>info@pametnakuca.rs</p>
+                        </div>
+                    </div>
+
+                    <div class="info-stavka">
+                        <div>
+                            <strong>Radno vreme</strong>
+                            <p>Pon - Pet: 09:00 - 18:00</p>
+                            <p>Subota: 10:00 - 14:00</p>
+                        </div>
+                    </div>
+
+                    <div class="info-akcija">
+                                    <a href="assets/dokumenti/katalog_usluga.pdf" download class="dugme-sekundarno"> Preuzmi Katalog Usluga (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mapa -->
+        <section class="mapa-sekcija">
+            <h2>Naša Lokacija</h2>
+            <div class="mapa-okvir">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2802.3442728027417!2d20.36821477575499!3d45.38222563890521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475adb740a7e9d41%3A0xc0e5f35a210651fe!2zMjAuINC-0LrRgtC-0LHRgNCwIDExLCDQl9GA0LXRmtCw0L3QuNC9!5e0!3m2!1ssr!2srs!4v1785945930423!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-sadrzaj">
+            <div>
+                <h4>Pametna Kuća DOO</h4>
+                <p>20. oktobra 11, Zrenjanin</p>
+                <p>Tel: +381 62 8975315</p>
+                <p>Email: info@pametnakuca.rs</p>
+            </div>
+            <div>
+                <h4>Brzi linkovi</h4>
+                <a href="index.html">Početna</a>
+                <a href="o-nama.html">O nama</a>
+                <a href="usluge.html">Usluge</a>
+                <a href="kalkulator.html">Kalkulator</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div>
+                <h4>Radno vreme</h4>
+                <p>Pon - Pet: 09:00 - 18:00</p>
+                <p>Subota: 10:00 - 14:00</p>
+                <p>Nedelja: Zatvoreno</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Pametna Kuća DOO. Sva prava zadržana.</p>
+    </footer>
+
+    <script src="js/glavni.js"></script>
+    <script src="js/validacija.js"></script>
+</body>
+</html>

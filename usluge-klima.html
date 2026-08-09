@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pametno upravljanje grejanjem i klimatizacijom - uštedite do 30% energije uz pametne termostate.">
+    <meta name="keywords" content="pametni termostati, grejanje, klimatizacija, ušteda energije, smart heating, cooling">
+    <title>Klimatizacija i Grejanje | Pametna Kuća</title>
+    <link rel="stylesheet" href="css/stil.css">
+    <link rel="icon" href="assets/slike/logo.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="zaglavlje-kontejner">
+            <a href="index.html" class="logo-link">
+                <img src="assets/slike/logo.png" alt="Pametna Kuća Logo" height="50">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="o-nama.html">O nama</a></li>
+                    <li class="padajuci-meni">
+                        <a href="usluge.html" class="active">Usluge i Proizvodi</a>
+                        <div class="padajuci-sadrzaj">
+                            <a href="usluge-rasveta.html">Pametna Rasveta</a>
+                            <a href="usluge-bezbednost.html">Bezbednost</a>
+                            <a href="usluge-klima.html">Klimatizacija</a>
+                            <a href="usluge-roletne.html">Automatizacija roletni</a>
+                            <a href="usluge-konsultacije.html">Konsultacije</a>
+                        </div>
+                    </li>
+                    <li><a href="kalkulator.html">Kalkulator</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="kontrole-pristupacnosti">
+                <button class="dugme-pristupacnost" onclick="promeniTemu()" aria-label="Promena teme">T</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('out')" aria-label="Smanji zum">−</button>
+                <button class="dugme-pristupacnost" onclick="resetujZoom()" aria-label="Resetuj zum">100%</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('in')" aria-label="Povećaj zum">+</button>
+            </div>
+            <button class="hamburger" onclick="toggleMeni()" aria-label="Meni">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="glavni-sadrzaj">
+        <nav class="breadcrumb">
+            <a href="index.html">Početna</a> &gt; 
+            <a href="usluge.html">Usluge</a> &gt; 
+            <span>Klimatizacija i Grejanje</span>
+        </nav>
+
+        <h1>Pametna Klimatizacija i Grejanje</h1>
+        <p class="podnaslov">Uštedite do 30% energije uz pametno upravljanje temperaturom.</p>
+
+        <div class="usluga-detalji">
+            <div class="usluga-slika">
+                <img src="assets/slike/grejanje.jfif" alt="Klimatizacija i grejanje">
+            </div>
+            <div class="usluga-tekst">
+                <h2>Inteligentno upravljanje temperaturom</h2>
+                <p>Pametni termostati uče vaše navike i prilagođavaju temperaturu tako da uvek budete komforni, dok istovremeno značajno smanjujete račune za energiju.</p>
+                
+                <h3>Ključne karakteristike:</h3>
+                <ul class="karakteristike-lista">
+                    <li><strong>Učenje navika</strong> - Termostat automatski prilagođava temperaturu vašem rasporedu</li>
+                    <li><strong>Daljinsko upravljanje</strong> - Podešavajte temperaturu sa bilo kog mesta putem aplikacije</li>
+                    <li><strong>Zonska kontrola</strong> - Različita temperatura za svaku prostoriju</li>
+                    <li><strong>Integracija sa vremenskom prognozom</strong> - Automatska prilagodba spoljnim uslovima</li>
+                    <li><strong>Energetski izveštaji</strong> - Pregled potrošnje i preporuke za uštedu</li>
+                    <li><strong>Glasovne komande</strong> - Kompatibilnost sa Google Assistant, Alexa i Siri</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="usluga-ponuda">
+            <h2>Naša ponuda</h2>
+            <div class="ponuda-mreza">
+                <div class="ponuda-kartica">
+                    <h3>Pametni termostati</h3>
+                    <p>Nest, ecobee i drugi vodeći brendovi sa učenjem i daljinskom kontrolom.</p>
+                    <span class="cena">od 200 EUR</span>
+                </div>
+                <div class="ponuda-kartica">
+                    <h3>Zonsko grejanje</h3>
+                    <p>Neovisna kontrola temperature za svaku prostoriju ili zonu.</p>
+                    <span class="cena">od 150 EUR</span>
+                </div>
+                <div class="ponuda-kartica">
+                    <h3>Pametni ventili</h3>
+                    <p>Automatska regulacija protoka tople vode po prostorijama.</p>
+                    <span class="cena">od 45 EUR</span>
+                </div>
+                <div class="ponuda-kartica">
+                    <h3>Kompletne instalacije</h3>
+                    <p>Projektovanje i ugradnja kompletnog sistema grejanja/hlađenja.</p>
+                    <span class="cena">od 500 EUR</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="usluga-galerija">
+            <h2>Galerija projekata</h2>
+            <div class="galerija-mreza">
+                <img src="assets/slike/termostat.jfif" alt="Pametni termostat">
+                <img src="assets/slike/telefon.jpg" alt="Aplikacija za kontrolu grejanja">
+                <img src="assets/slike/instalacija_grejanje.jpg" alt="Instalacija sistema">
+            </div>
+        </section>
+
+        <section class="usluga-akcija">
+            <h2>Počnite da štedite već danas</h2>
+            <p>Izračunajte trošak instalacije</p>
+            <a href="kalkulator.html" class="dugme-primarno">Izračunaj trošak</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-sadrzaj">
+            <div>
+                <h4>Pametna Kuća DOO</h4>
+                <p>20. oktobra 11, Zrenjanin</p>
+                <p>Tel: +381 62 8975315</p>
+                <p>Email: info@pametnakuca.rs</p>
+            </div>
+            <div>
+                <h4>Brzi linkovi</h4>
+                <a href="index.html">Početna</a>
+                <a href="o-nama.html">O nama</a>
+                <a href="usluge.html">Usluge</a>
+                <a href="kalkulator.html">Kalkulator</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div>
+                <h4>Radno vreme</h4>
+                <p>Pon - Pet: 09:00 - 18:00</p>
+                <p>Subota: 10:00 - 14:00</p>
+                <p>Nedelja: Zatvoreno</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Pametna Kuća DOO. Sva prava zadržana.</p>
+    </footer>
+
+    <script src="js/glavni.js"></script>
+    <script src="js/validacija.js"></script>
+</body>
+</html>

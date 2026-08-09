@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stručne konsultacije i projektovanje pametnih sistema - analiza potreba, izrada dokumentacije i izbor opreme.">
+    <meta name="keywords" content="konsultacije, projektovanje, smart home, analiza, tehnicka dokumentacija, savetovanje">
+    <title>Konsultacije | Pametna Kuća</title>
+    <link rel="stylesheet" href="css/stil.css">
+    <link rel="icon" href="assets/slike/logo.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="zaglavlje-kontejner">
+            <a href="index.html" class="logo-link">
+                <img src="assets/slike/logo.png" alt="Pametna Kuća Logo" height="50">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="o-nama.html">O nama</a></li>
+                    <li class="padajuci-meni">
+                        <a href="usluge.html" class="active">Usluge i Proizvodi</a>
+                        <div class="padajuci-sadrzaj">
+                            <a href="usluge-rasveta.html">Pametna Rasveta</a>
+                            <a href="usluge-bezbednost.html">Bezbednost</a>
+                            <a href="usluge-klima.html">Klimatizacija</a>
+                            <a href="usluge-roletne.html">Automatizacija roletni</a>
+                            <a href="usluge-konsultacije.html">Konsultacije</a>
+                        </div>
+                    </li>
+                    <li><a href="kalkulator.html">Kalkulator</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="kontrole-pristupacnosti">
+                <button class="dugme-pristupacnost" onclick="promeniTemu()" aria-label="Promena teme">T</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('out')" aria-label="Smanji zum">−</button>
+                <button class="dugme-pristupacnost" onclick="resetujZoom()" aria-label="Resetuj zum">100%</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('in')" aria-label="Povećaj zum">+</button>
+            </div>
+            <button class="hamburger" onclick="toggleMeni()" aria-label="Meni">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="glavni-sadrzaj">
+        <nav class="breadcrumb">
+            <a href="index.html">Početna</a> &gt; 
+            <a href="usluge.html">Usluge</a> &gt; 
+            <span>Konsultacije</span>
+        </nav>
+
+        <h1>Konsultacije i Projektovanje</h1>
+        <p class="podnaslov">Od ideje do realizacije - stručna podrška na svakom koraku.</p>
+
+        <div class="usluga-detalji">
+            <div class="usluga-slika">
+                <img src="assets/slike/konstultacije.jpg" alt="Konsultacije">
+            </div>
+            <div class="usluga-tekst">
+                <h2>Stručne konsultacije po meri</h2>
+                <p>Svaki dom je jedinstven, zato vam pristupamo individualno. Naši stručnjaci će analizirati vaše potrebe, prostor i budžet, i predložiti optimalna rešenja koja će vaš dom učiniti pametnim i efikasnim.</p>
+                
+                <h3>Šta dobijate:</h3>
+                <ul class="karakteristike-lista">
+                    <li><strong>Analiza prostora i potreba</strong> - Detaljan pregled vašeg doma i vaših želja</li>
+                    <li><strong>Izrada tehničke dokumentacije</strong> - Projekat sa svim potrebnim specifikacijama</li>
+                    <li><strong>Izbor optimalne opreme</strong> - Preporuka najboljih uređaja za vaše potrebe i budžet</li>
+                    <li><strong>Procena troškova</strong> - Detaljan predračun svih radova i materijala</li>
+                    <li><strong>Planiranje instalacije</strong> - Raspored radova i vremenski okvir izvođenja</li>
+                    <li><strong>Podrška nakon realizacije</strong> - Obuka za korišćenje i tehnička podrška</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="usluga-proces">
+            <h2>Kako funkcionišemo</h2>
+            <div class="proces-koraci">
+                <div class="korak">
+                    <div class="korak-broj">1</div>
+                    <h3>Kontakt</h3>
+                    <p>Popunite formu ili nas pozovite i opišite svoje potrebe.</p>
+                </div>
+                <div class="korak">
+                    <div class="korak-broj">2</div>
+                    <h3>Analiza</h3>
+                    <p>Naš tim dolazi na teren i analizira vaš prostor.</p>
+                </div>
+                <div class="korak">
+                    <div class="korak-broj">3</div>
+                    <h3>Projektovanje</h3>
+                    <p>Izrađujemo tehničku dokumentaciju i biramo opremu.</p>
+                </div>
+                <div class="korak">
+                    <div class="korak-broj">4</div>
+                    <h3>Ponuda</h3>
+                    <p>Dostavljamo vam detaljnu ponudu sa svim troškovima.</p>
+                </div>
+                <div class="korak">
+                    <div class="korak-broj">5</div>
+                    <h3>Realizacija</h3>
+                    <p>Ugrađujemo sistem i vršimo sva podešavanja.</p>
+                </div>
+                <div class="korak">
+                    <div class="korak-broj">6</div>
+                    <h3>Podrška</h3>
+                    <p>Obučavamo vas za korišćenje i pružamo podršku.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="usluga-akcija">
+            <h2>Spremni ste za pametni dom?</h2>
+            <p>Zakažite besplatne konsultacije već danas.</p>
+            <a href="kontakt.html" class="dugme-primarno">Zakažite konsultacije</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-sadrzaj">
+            <div>
+                <h4>Pametna Kuća DOO</h4>
+                <p>20. oktobra 11, Zrenjanin</p>
+                <p>Tel: +381 62 8975315</p>
+                <p>Email: info@pametnakuca.rs</p>
+            </div>
+            <div>
+                <h4>Brzi linkovi</h4>
+                <a href="index.html">Početna</a>
+                <a href="o-nama.html">O nama</a>
+                <a href="usluge.html">Usluge</a>
+                <a href="kalkulator.html">Kalkulator</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div>
+                <h4>Radno vreme</h4>
+                <p>Pon - Pet: 09:00 - 18:00</p>
+                <p>Subota: 10:00 - 14:00</p>
+                <p>Nedelja: Zatvoreno</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Pametna Kuća DOO. Sva prava zadržana.</p>
+    </footer>
+
+    <script src="js/glavni.js"></script>
+    <script src="js/validacija.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pregled usluga i opreme za pametne kuće: rasveta, alarmi, video nadzor, termostati, automatizacija roletni, konsultacije.">
+    <meta name="keywords" content="pametna rasveta, video nadzor, alarmi, termostati, smart home usluge, automatizacija roletni, konsultacije, beograd">
+    <title>Usluge i Proizvodi | Pametna Kuća</title>
+    <link rel="stylesheet" href="css/stil.css">
+    <link rel="icon" href="assets/slike/logo.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="zaglavlje-kontejner">
+            <a href="index.html" class="logo-link">
+                <img src="assets/slike/logo.png" alt="Pametna Kuća Logo" height="50">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="o-nama.html">O nama</a></li>
+                    <li class="padajuci-meni">
+                        <a href="usluge.html" class="active">Usluge i Proizvodi</a>
+                        <div class="padajuci-sadrzaj">
+                            <a href="usluge-rasveta.html">Pametna Rasveta</a>
+                            <a href="usluge-bezbednost.html">Bezbednost</a>
+                            <a href="usluge-klima.html">Klimatizacija</a>
+                            <a href="usluge-roletne.html">Automatizacija roletni</a>
+                            <a href="usluge-konsultacije.html">Konsultacije</a>
+                        </div>
+                    </li>
+                    <li><a href="kalkulator.html">Kalkulator</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="kontrole-pristupacnosti">
+                <button class="dugme-pristupacnost" onclick="promeniTemu()" aria-label="Promena teme">T</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('out')" aria-label="Smanji zum">−</button>
+                <button class="dugme-pristupacnost" onclick="resetujZoom()" aria-label="Resetuj zum">100%</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('in')" aria-label="Povećaj zum">+</button>
+            </div>
+            <button class="hamburger" onclick="toggleMeni()" aria-label="Meni">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="glavni-sadrzaj">
+        <h1>Naše Usluge i Proizvodi</h1>
+        <p>Nudimo kompletne usluge projektovanja, nabavke i ugradnje opreme za pametne domove.</p>
+
+        <div class="mreza-usluga">
+            <!-- 1. Pametna Rasveta -->
+            <div class="kartica" id="rasveta">
+                <div class="kartica-sadrzaj">
+                    <img src="assets/slike/rasveta.png" alt="Pametna rasveta">
+                    <h3>Pametna Rasveta</h3>
+                    <p>Automatska kontrola osvetljenja, kreiranje scena, ušteda energije i upravljanje putem mobilne aplikacije ili glasovnih komandi.</p>
+                    <ul class="kartica-lista">
+                        <li>Pametne sijalice i LED trake</li>
+                        <li>Dimeri i senzori pokreta</li>
+                        <li>Upravljanje bojom i jačinom svetla</li>
+                    </ul>
+                    <a href="usluge-rasveta.html" class="dugme-sekundarno">Saznajte više</a>
+                </div>
+            </div>
+
+            <!-- 2. Bezbednost -->
+            <div class="kartica" id="bezbednost">
+                <div class="kartica-sadrzaj">
+                    <img src="assets/slike/bezbednost.webp" alt="Bezbednost i nadzor">
+                    <h3>Bezbednost i Nadzor</h3>
+                    <p>Ugradnja IP kamera visoke rezolucije, senzora pokreta, pametnih bravica i protivprovalnih alarmnih sistema.</p>
+                    <ul class="kartica-lista">
+                        <li>HD i 4K kamere sa noćnim vidom</li>
+                        <li>Alarmni sistemi sa notifikacijama</li>
+                        <li>Pametne brave i interfoni</li>
+                    </ul>
+                    <a href="usluge-bezbednost.html" class="dugme-sekundarno">Saznajte više</a>
+                </div>
+            </div>
+
+            <!-- 3. Klimatizacija -->
+            <div class="kartica" id="klima">
+                <div class="kartica-sadrzaj">
+                    <img src="assets/slike/grejanje.jfif" alt="Klimatizacija i grejanje">
+                    <h3>Klimatizacija i Grejanje</h3>
+                    <p>Pametni termostati koji uče vaše navike, prilagođavaju temperaturu i smanjuju račune za struju i grejanje do 30%.</p>
+                    <ul class="kartica-lista">
+                        <li>Pametni termostati (Nest, ecobee)</li>
+                        <li>Zonsko grejanje i hlađenje</li>
+                        <li>Daljinsko upravljanje temperaturom</li>
+                    </ul>
+                    <a href="usluge-klima.html" class="dugme-sekundarno">Saznajte više</a>
+                </div>
+            </div>
+
+            <!-- 4. Automatizacija roletni -->
+            <div class="kartica" id="roletne">
+                <div class="kartica-sadrzaj">
+                    <img src="assets/slike/roletne.jpg" alt="Automatizacija roletni i žaluzina">
+                    <h3>Automatizacija roletni i žaluzina</h3>
+                    <p>Potpuna automatizacija vaših roletni i žaluzina. Programirajte njihovo otvaranje i zatvaranje prema vašim potrebama, vremenskim uslovima ili senzorima svetlosti.</p>
+                    <ul class="kartica-lista">
+                        <li>Daljinsko upravljanje roletnama</li>
+                        <li>Automatika prema vremenskim uslovima</li>
+                        <li>Integracija sa senzorima svetlosti</li>
+                        <li>Programiranje vremenskih šema</li>
+                    </ul>
+                    <a href="usluge-roletne.html" class="dugme-sekundarno">Saznajte više</a>
+                </div>
+            </div>
+
+            <!-- 5. Konsultacije -->
+            <div class="kartica" id="konsultacije">
+                <div class="kartica-sadrzaj">
+                    <img src="assets/slike/konstultacije.jpg" alt="Konsultacije">
+                    <h3>Konsultacije i Projektovanje</h3>
+                    <p>Pružamo stručne savete i izradu kompletnog projekta za vaš pametni dom, prilagođenog vašim potrebama i budžetu.</p>
+                    <ul class="kartica-lista">
+                        <li>Analiza prostora i potreba</li>
+                        <li>Izrada tehničke dokumentacije</li>
+                        <li>Izbor optimalne opreme</li>
+                    </ul>
+                    <a href="usluge-konsultacije.html" class="dugme-sekundarno">Saznajte više</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-sadrzaj">
+            <div>
+                <h4>Pametna Kuća DOO</h4>
+                <p>20. oktobra 11, Zrenjanin</p>
+                <p>Tel: +381 62 8975315</p>
+                <p>Email: info@pametnakuca.rs</p>
+            </div>
+            <div>
+                <h4>Brzi linkovi</h4>
+                <a href="index.html">Početna</a>
+                <a href="o-nama.html">O nama</a>
+                <a href="usluge.html">Usluge</a>
+                <a href="kalkulator.html">Kalkulator</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div>
+                <h4>Radno vreme</h4>
+                <p>Pon - Pet: 09:00 - 18:00</p>
+                <p>Subota: 10:00 - 14:00</p>
+                <p>Nedelja: Zatvoreno</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Pametna Kuća DOO. Sva prava zadržana.</p>
+    </footer>
+
+    <script src="js/glavni.js"></script>
+    <script src="js/validacija.js"></script>
+</body>
+</html>

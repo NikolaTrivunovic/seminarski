@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O nama - Pametna Kuća DOO. Vaš pouzdan partner za ugradnju pametnih uređaja od 2018. godine.">
+    <meta name="keywords" content="o nama, pametna kuca, smart home, misija, vizija, automatizacija, beograd">
+    <meta name="author" content="Pametna Kuća DOO">
+    <meta property="og:title" content="O nama - Pametna Kuća">
+    <meta property="og:description" content="Vodeći stručnjaci u oblasti automatizacije domova i pametnih tehnologija.">
+    <title>O Nama | Pametna Kuća</title>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stil.css">
+    <link rel="icon" href="assets/slike/logo.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="zaglavlje-kontejner">
+            <a href="index.html" class="logo-link">
+                <img src="assets/slike/logo.png" alt="Pametna Kuća Logo" height="50">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="o-nama.html" class="active">O nama</a></li>
+                    <li class="padajuci-meni">
+                        <a href="usluge.html">Usluge i Proizvodi</a>
+                        <div class="padajuci-sadrzaj">
+                            <a href="usluge-rasveta.html">Pametna Rasveta</a>
+                            <a href="usluge-bezbednost.html">Bezbednost</a>
+                            <a href="usluge-klima.html">Klimatizacija</a>
+                            <a href="usluge-roletne.html">Pametne Roletne</a>
+                            <a href="usluge-konsultacije.html">Konsultacije</a>
+                        </div>
+                    </li>
+                    <li><a href="kalkulator.html">Kalkulator</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="kontrole-pristupacnosti">
+                <button class="dugme-pristupacnost" onclick="promeniTemu()" aria-label="Promena teme">T</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('out')" aria-label="Smanji zum">−</button>
+                <button class="dugme-pristupacnost" onclick="resetujZoom()" aria-label="Resetuj zum">100%</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('in')" aria-label="Povećaj zum">+</button>
+            </div>
+            <button class="hamburger" onclick="toggleMeni()" aria-label="Meni">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero-slika">
+        <div class="hero-slika-sadrzaj">
+            <h1>O Našoj Kompaniji</h1>
+            <p>Vodeći stručnjaci u oblasti automatizacije domova i pametnih tehnologija od 2018. godine.</p>
+        </div>
+    </section>
+   
+    <main class="container my-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <h2 class="mb-3" style="color: var(--primarna-boja);">Naša Misija i Vizija</h2>
+                <p style="color: var(--tekst-tamni); opacity: 0.85;">Cilj nam je da omogućimo svim domaćinstvima pristup najsavremenijoj tehnologiji koja povećava bezbednost, energetsku efikasnost i pruža potpuni komfor unutar vašeg životnog prostora.</p>
+                <p style="color: var(--tekst-tamni); opacity: 0.85;">Naš tim čine sertifikovani inženjeri i tehničari sa dugogodišnjim iskustvom u projektovanju i ugradnji IoT sistema i pametnih uređaja najnovije generacije.</p>
+                <p style="color: var(--tekst-tamni); opacity: 0.85;">Posvećeni smo kontinuiranom usavršavanju i praćenju globalnih trendova u oblasti pametnih kuća, kako bismo našim klijentima uvek ponudili najbolja rešenja.</p>
+                <a href="kontakt.html" class="dugme-primarno mt-3 d-inline-block">Zatražite ponudu</a>
+            </div>
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm o-nama-kartica">
+                    <img src="assets/slike/projekat.jpg" class="card-img-top rounded" alt="Naše poslovanje">
+                    <div class="card-body text-center o-nama-kartica-telo">
+                        <p class="small" style="color: var(--tekst-tamni); opacity: 0.7;">Naš tim na jednom od projekata.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistika -->
+        <div class="row text-center mb-5">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow-sm h-100 p-4 o-nama-kartica">
+                    <div class="card-body">
+                        <h3 class="card-title font-weight-bold display-4" style="color: var(--sekundarna-boja);">500+</h3>
+                        <p class="card-text" style="color: var(--tekst-tamni); opacity: 0.7;">Uspešno realizovanih projekata</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow-sm h-100 p-4 o-nama-kartica">
+                    <div class="card-body">
+                        <h3 class="card-title font-weight-bold display-4" style="color: var(--sekundarna-boja);">100%</h3>
+                        <p class="card-text" style="color: var(--tekst-tamni); opacity: 0.7;">Posvećenost kvalitetu i podršci</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow-sm h-100 p-4 o-nama-kartica">
+                    <div class="card-body">
+                        <h3 class="card-title font-weight-bold display-4" style="color: var(--sekundarna-boja);">10</h3>
+                        <p class="card-text" style="color: var(--tekst-tamni); opacity: 0.7;">Godina garancije na radove</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow-sm h-100 p-4 o-nama-kartica">
+                    <div class="card-body">
+                        <h3 class="card-title font-weight-bold display-4" style="color: var(--sekundarna-boja);">24/7</h3>
+                        <p class="card-text" style="color: var(--tekst-tamni); opacity: 0.7;">Tehnička podrška</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion -->
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mb-4" style="color: var(--primarna-boja);">Zašto baš mi?</h2>
+                <div class="accordion" id="accordionPrimer">
+                    <div class="card border-0 shadow-sm mb-2 o-nama-kartica">
+                        <div class="card-header border-0 o-nama-kartica-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left font-weight-bold o-nama-accordion-btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <span class="mr-2" style="color: var(--akcentna-boja);">◆</span> Profesionalna instalacija
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionPrimer">
+                            <div class="card-body o-nama-kartica-telo" style="color: var(--tekst-tamni); opacity: 0.85;">
+                                Svi naši inženjeri su sertifikovani i imaju višegodišnje iskustvo u ugradnji pametnih sistema. Radimo po najvišim standardima kvaliteta.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 shadow-sm mb-2 o-nama-kartica">
+                        <div class="card-header border-0 o-nama-kartica-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left font-weight-bold o-nama-accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <span class="mr-2" style="color: var(--akcentna-boja);">◆</span> Kvalitetna oprema
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionPrimer">
+                            <div class="card-body o-nama-kartica-telo" style="color: var(--tekst-tamni); opacity: 0.85;">
+                                Koristimo isključivo proverene brendove i najsavremeniju tehnologiju. Svi uređaji imaju garanciju i podršku.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 shadow-sm mb-2 o-nama-kartica">
+                        <div class="card-header border-0 o-nama-kartica-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left font-weight-bold o-nama-accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <span class="mr-2" style="color: var(--akcentna-boja);">◆</span> Pristupačne cene
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionPrimer">
+                            <div class="card-body o-nama-kartica-telo" style="color: var(--tekst-tamni); opacity: 0.85;">
+                                Nudimo konkurentne cene i fleksibilne modele plaćanja. Pre nego što započnemo rad, dajemo vam detaljnu i transparentnu ponudu.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-sadrzaj">
+            <div>
+                <h4>Pametna Kuća DOO</h4>
+                <p>20. oktobra 11, Zrenjanin</p>
+                <p>Tel: +381 62 8975315</p>
+                <p>Email: info@pametnakuca.rs</p>
+            </div>
+            <div>
+                <h4>Brzi linkovi</h4>
+                <a href="index.html">Početna</a>
+                <a href="o-nama.html">O nama</a>
+                <a href="usluge.html">Usluge</a>
+                <a href="kalkulator.html">Kalkulator</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div>
+                <h4>Radno vreme</h4>
+                <p>Pon - Pet: 09:00 - 18:00</p>
+                <p>Subota: 10:00 - 14:00</p>
+                <p>Nedelja: Zatvoreno</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Pametna Kuća DOO. Sva prava zadržana.</p>
+    </footer>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/glavni.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Automatizacija roletni i žaluzina - daljinsko upravljanje, automatsko otvaranje/zatvaranje, integracija sa senzorima i pametnim sistemima.">
+    <meta name="keywords" content="automatizacija roletni, pametne roletne, motorne roletne, žaluzine, smart blinds, daljinsko upravljanje">
+    <title>Automatizacija roletni | Pametna Kuća</title>
+    <link rel="stylesheet" href="css/stil.css">
+    <link rel="icon" href="assets/slike/logo.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="zaglavlje-kontejner">
+            <a href="index.html" class="logo-link">
+                <img src="assets/slike/logo.png" alt="Pametna Kuća Logo" height="50">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="o-nama.html">O nama</a></li>
+                    <li class="padajuci-meni">
+                        <a href="usluge.html" class="active">Usluge i Proizvodi</a>
+                        <div class="padajuci-sadrzaj">
+                            <a href="usluge-rasveta.html">Pametna Rasveta</a>
+                            <a href="usluge-bezbednost.html">Bezbednost</a>
+                            <a href="usluge-klima.html">Klimatizacija</a>
+                            <a href="usluge-roletne.html">Automatizacija roletni</a>
+                            <a href="usluge-konsultacije.html">Konsultacije</a>
+                        </div>
+                    </li>
+                    <li><a href="kalkulator.html">Kalkulator</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="kontrole-pristupacnosti">
+                <button class="dugme-pristupacnost" onclick="promeniTemu()" aria-label="Promena teme">T</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('out')" aria-label="Smanji zum">−</button>
+                <button class="dugme-pristupacnost" onclick="resetujZoom()" aria-label="Resetuj zum">100%</button>
+                <button class="dugme-pristupacnost" onclick="zumiraj('in')" aria-label="Povećaj zum">+</button>
+            </div>
+            <button class="hamburger" onclick="toggleMeni()" aria-label="Meni">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="glavni-sadrzaj">
+        <nav class="breadcrumb">
+            <a href="index.html">Početna</a> &gt; 
+            <a href="usluge.html">Usluge</a> &gt; 
+            <span>Automatizacija roletni i žaluzina</span>
+        </nav>
+
+        <h1>Automatizacija roletni i žaluzina</h1>
+        <p class="podnaslov">Potpuna kontrola nad svetlošću i privatnošću uz samo jedan klik.</p>
+
+        <div class="usluga-detalji">
+            <div class="usluga-slika">
+                <img src="assets/slike/roletne.jpg" alt="Automatizacija roletni">
+            </div>
+            <div class="usluga-tekst">
+                <h2>Inteligentno upravljanje roletnama</h2>
+                <p>Automatizacija roletni i žaluzina donosi vam potpunu udobnost i kontrolu. Bez obzira da li želite da zaštitite svoj dom od sunca, poboljšate energetsku efikasnost ili jednostavno uživate u dodirnoj luksuzu, naša rešenja su prilagođena vašim potrebama.</p>
+                
+                <h3>Ključne karakteristike:</h3>
+                <ul class="karakteristike-lista">
+                    <li><strong>Daljinsko upravljanje</strong> - Kontrolišite roletne putem mobilne aplikacije sa bilo kog mesta</li>
+                    <li><strong>Automatsko otvaranje/zatvaranje</strong> - Programirajte vremenske šeme za otvaranje i zatvaranje roletni</li>
+                    <li><strong>Senzori svetlosti</strong> - Roletne se automatski prilagođavaju jačini sunčeve svetlosti</li>
+                    <li><strong>Senzori temperature</strong> - Automatsko zatvaranje roletni tokom najtoplijeg dela dana radi uštede energije</li>
+                    <li><strong>Glasovne komande</strong> - Integracija sa Google Assistant, Amazon Alexa i Apple HomeKit</li>
+                    <li><strong>Scenska automatizacija</strong> - Roletne se sinhronizuju sa drugim pametnim uređajima (rasveta, klima)</li>
+                    <li><strong>Zaštita od provale</strong> - Automatsko nasumično otvaranje/zatvaranje tokom odsustva</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="usluga-ponuda">
+            <h2>Naša ponuda</h2>
+            <div class="ponuda-mreza">
+                <div class="ponuda-kartica">
+                    <h3>Motorne roletne</h3>
+                    <p>Elektromotorni mehanizmi za sve tipove roletni, sa tihim i pouzdanim radom.</p>
+                    <span class="cena">od 180 EUR</span>
+                </div>
+                <div class="ponuda-kartica">
+                    <h3>Pametni kontroleri</h3>
+                    <p>Kontroleri za daljinsko upravljanje roletnama putem WiFi ili ZigBee protokola.</p>
+                    <span class="cena">od 60 EUR</span>
+                </div>
+                <div class="ponuda-kartica">
+                    <h3>Senzori za roletne</h3>
+                    <p>Senzori svetlosti, temperature i vetra za automatsku regulaciju roletni.</p>
+                    <span class="cena">od 35 EUR</span>
+                </div>
+                <div class="ponuda-kartica">
+                    <h3>Kompletna automatizacija</h3>
+                    <p>Sveobuhvatno rešenje za celu kuću sa integracijom u pametni sistem.</p>
+                    <span class="cena">od 450 EUR</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="usluga-galerija">
+            <h2>Galerija projekata</h2>
+            <div class="galerija-mreza">
+                <img src="assets/slike/mototrne_roletne.jpg" alt="Motorne roletne">
+                <img src="assets/slike/žaluzine.jpg" alt="Pametne žaluzine">
+                <img src="assets/slike/kontroler_roletne.jpg" alt="Kontroler za roletne">
+            </div>
+        </section>
+
+        <section class="usluga-akcija">
+            <h2>Učinite svoj dom pametnijim</h2>
+            <p>Izračunajte trošak instalacije</p>
+            <a href="kalkulator.html" class="dugme-primarno">Izračunaj trošak</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-sadrzaj">
+            <div>
+                <h4>Pametna Kuća DOO</h4>
+                <p>20. oktobra 11, Zrenjanin</p>
+                <p>Tel: +381 62 8975315</p>
+                <p>Email: info@pametnakuca.rs</p>
+            </div>
+            <div>
+                <h4>Brzi linkovi</h4>
+                <a href="index.html">Početna</a>
+                <a href="o-nama.html">O nama</a>
+                <a href="usluge.html">Usluge</a>
+                <a href="kalkulator.html">Kalkulator</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div>
+                <h4>Radno vreme</h4>
+                <p>Pon - Pet: 09:00 - 18:00</p>
+                <p>Subota: 10:00 - 14:00</p>
+                <p>Nedelja: Zatvoreno</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Pametna Kuća DOO. Sva prava zadržana.</p>
+    </footer>
+
+    <script src="js/glavni.js"></script>
+    <script src="js/validacija.js"></script>
+</body>
+</html>
