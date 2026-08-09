@@ -9,7 +9,6 @@ function validirajFormu(dogadjaj) {
     dogadjaj.preventDefault();
     let jeValidno = true;
 
-    // Ime i prezime
     const imeIme = document.getElementById('imePrezime');
     const imeGreska = document.getElementById('imeGreska');
     if (imeIme.value.trim().length < 3) {
@@ -22,7 +21,6 @@ function validirajFormu(dogadjaj) {
         imeIme.style.borderColor = '';
     }
 
-    // Email
     const email = document.getElementById('emailAdresa');
     const emailGreska = document.getElementById('emailGreska');
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -36,7 +34,6 @@ function validirajFormu(dogadjaj) {
         email.style.borderColor = '';
     }
 
-    // Telefon
     const telefon = document.getElementById('telefonBroj');
     const telefonGreska = document.getElementById('telefonGreska');
     if (telefon.value.trim().length < 6) {
@@ -49,7 +46,6 @@ function validirajFormu(dogadjaj) {
         telefon.style.borderColor = '';
     }
 
-    // Poruka
     const poruka = document.getElementById('porukaTekst');
     const porukaGreska = document.getElementById('porukaGreska');
     if (poruka.value.trim().length < 10) {
