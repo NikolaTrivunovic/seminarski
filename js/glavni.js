@@ -9,23 +9,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const navUl = document.querySelector('nav ul');
     
     if (hamburger && navUl) {
+        // Otvaranje i zatvaranje menija na klik hamburgera
         hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
             navUl.classList.toggle('open');
             this.classList.toggle('active');
+            this.setAttribute('aria-expanded', navUl.classList.contains('open'));
         });
 
+        // Zatvori meni kada se klikne van zaglavlja
         document.addEventListener('click', function(e) {
             if (!e.target.closest('header')) {
-                navUl.classList.remove('open');
-                hamburger.classList.remove('active');
+                zatvoriMeni(navUl, hamburger);
             }
         });
 
+        // Zatvori meni kada se klikne na link u meniju
         navUl.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
-                navUl.classList.remove('open');
-                hamburger.classList.remove('active');
+                zatvoriMeni(navUl, hamburger);
             });
         });
     }
@@ -51,6 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Zatvaranje mobilnog menija
+function zatvoriMeni(navUl, hamburger) {
+    navUl.classList.remove('open');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+}
+
 function promeniTemu() {
     document.body.classList.toggle('tamna-tema');
     const jeTamna = document.body.classList.contains('tamna-tema');
@@ -66,18 +75,6 @@ let trenutniZoom = 1.0;
 const MIN_ZOOM = 0.8;
 const MAX_ZOOM = 1.5;
 const KORAK_ZOOM = 0.1;
-
-function promeniVelicinuFonta() {
-    if (document.body.classList.contains('zoom-aktiviran')) {
-        resetujZoom();
-        return;
-    }
-
-    document.body.classList.add('zoom-aktiviran');
-    trenutniZoom = 1.1;
-    primeniZoom();
-    localStorage.setItem('zoomNivo', JSON.stringify(trenutniZoom));
-}
 
 function zumiraj(akcija) {
     if (akcija === 'in' && trenutniZoom < MAX_ZOOM) {
@@ -102,9 +99,9 @@ function primeniZoom() {
 
 function resetujZoom() {
     document.body.classList.remove('zoom-aktiviran');
-    document.body.style.transform = 'scale(1)';
-    document.body.style.transformOrigin = 'top left';
-    document.body.style.width = '100%';
+    document.body.style.transform = '';
+    document.body.style.transformOrigin = '';
+    document.body.style.width = '';
     document.body.style.minHeight = '';
     trenutniZoom = 1.0;
     localStorage.removeItem('zoomNivo');
