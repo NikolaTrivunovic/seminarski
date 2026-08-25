@@ -71,40 +71,49 @@ function promeniTemu() {
     }
 }
 
+// ===== Pristupačnost: veličina fonta =====
 let trenutniZoom = 1.0;
 const MIN_ZOOM = 0.8;
 const MAX_ZOOM = 1.5;
 const KORAK_ZOOM = 0.1;
+const OSNOVNI_FONT = 16;
 
 function zumiraj(akcija) {
-    if (akcija === 'in' && trenutniZoom < MAX_ZOOM) {
-        trenutniZoom += KORAK_ZOOM;
-    } else if (akcija === 'out' && trenutniZoom > MIN_ZOOM) {
-        trenutniZoom -= KORAK_ZOOM;
-    } else {
+    const promena = akcija === 'in' ? KORAK_ZOOM : -KORAK_ZOOM;
+    // Zaokruzujemo da se ne bi nakupila greska decimalnog racuna (1.1 + 0.1)
+    const noviZoom = Math.round((trenutniZoom + promena) * 10) / 10;
+
+    if (noviZoom < MIN_ZOOM || noviZoom > MAX_ZOOM) {
         return;
     }
-    
-    document.body.classList.add('zoom-aktiviran');
+
+    trenutniZoom = noviZoom;
     primeniZoom();
     localStorage.setItem('zoomNivo', JSON.stringify(trenutniZoom));
 }
 
 function primeniZoom() {
-    document.body.style.transform = 'scale(' + trenutniZoom + ')';
-    document.body.style.transformOrigin = 'top left';
-    document.body.style.width = (1 / trenutniZoom * 100) + '%';
-    document.body.style.minHeight = '100vh';
+    // Menjamo osnovnu velicinu fonta - sve rem vrednosti se skaliraju zajedno sa njom.
+    // Ranije je ovde stajao transform: scale() nad body-jem, sto je kvarilo
+    // lepljivo (sticky) zaglavlje i sve ostale transformacije na stranici.
+    document.documentElement.style.setProperty('--velicina-fonta', (OSNOVNI_FONT * trenutniZoom) + 'px');
+    azurirajPrikazZuma();
 }
 
 function resetujZoom() {
-    document.body.classList.remove('zoom-aktiviran');
-    document.body.style.transform = '';
-    document.body.style.transformOrigin = '';
-    document.body.style.width = '';
-    document.body.style.minHeight = '';
     trenutniZoom = 1.0;
+    document.documentElement.style.removeProperty('--velicina-fonta');
+    azurirajPrikazZuma();
     localStorage.removeItem('zoomNivo');
+}
+
+// Ispisuje trenutni nivo uvecanja na srednjem dugmetu
+function azurirajPrikazZuma() {
+    const dugme = document.querySelector('.dugme-pristupacnost[onclick="resetujZoom()"]');
+    if (dugme) {
+        dugme.textContent = Math.round(trenutniZoom * 100) + '%';
+        dugme.setAttribute('aria-label', 'Resetuj veličinu fonta (trenutno ' + Math.round(trenutniZoom * 100) + '%)');
+    }
 }
 
 function primeniPodesavanja() {
@@ -121,10 +130,9 @@ function primeniPodesavanja() {
 
     if (sacuvaniZoom) {
         trenutniZoom = JSON.parse(sacuvaniZoom);
-        if (trenutniZoom !== 1.0) {
-            document.body.classList.add('zoom-aktiviran');
-            primeniZoom();
-        }
+        primeniZoom();
+    } else {
+        azurirajPrikazZuma();
     }
 }
 

@@ -38,6 +38,8 @@ body.tamna-tema {
 
 html {
     scroll-behavior: smooth;
+    font-size: var(--velicina-fonta);
+    transition: font-size 0.3s ease;
 }
 
 body {
@@ -204,21 +206,6 @@ nav a.active::after {
     background: rgba(255,255,255,0.15);
     color: white;
     transform: translateY(-1px);
-}
-
-body.zoom-aktiviran {
-    transition: transform 0.3s ease;
-}
-
-body.zoom-aktiviran * {
-    transform: none !important;
-}
-
-@media (max-width: 768px) {
-    body.zoom-aktiviran {
-        width: 100%;
-        overflow-x: auto;
-    }
 }
 
 .hamburger {
