@@ -557,6 +557,17 @@ video {
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
+/* Vizuelna povratna informacija HTML5 validacije.
+   :placeholder-shown iskljucuje jos nepopunjena polja, da prazna forma
+   ne bi odmah bila sva crvena pri prvom otvaranju. */
+.forma-kontrola:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+.forma-kontrola:valid:not(:placeholder-shown) {
+    border-color: #22c55e;
+}
+
 body.tamna-tema .forma-kontrola {
     background: #1e293b;
     color: #e2e8f0;

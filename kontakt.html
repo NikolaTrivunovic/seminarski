@@ -56,25 +56,39 @@
                 <form id="kontaktForma">
                     <div class="forma-grupa">
                         <label for="imePrezime">Ime i Prezime</label>
-                        <input type="text" id="imePrezime" class="forma-kontrola" placeholder="Unesite vaše ime i prezime">
+                        <input type="text" id="imePrezime" name="imePrezime" class="forma-kontrola"
+                               placeholder="Unesite vaše ime i prezime"
+                               required minlength="3" maxlength="60"
+                               pattern="[A-Za-zČĆŽŠĐčćžšđ\s\-]{3,60}"
+                               title="Ime i prezime, najmanje 3 slova. Brojevi nisu dozvoljeni.">
                         <div id="imeGreska" class="poruka-greske"></div>
                     </div>
 
                     <div class="forma-grupa">
                         <label for="emailAdresa">E-mail Adresa</label>
-                        <input type="email" id="emailAdresa" class="forma-kontrola" placeholder="Unesite vašu email adresu">
+                        <input type="email" id="emailAdresa" name="emailAdresa" class="forma-kontrola"
+                               placeholder="Unesite vašu email adresu"
+                               required maxlength="120"
+                               title="Unesite ispravnu e-mail adresu, na primer ime@primer.rs">
                         <div id="emailGreska" class="poruka-greske"></div>
                     </div>
 
                     <div class="forma-grupa">
                         <label for="telefonBroj">Broj Telefona</label>
-                        <input type="text" id="telefonBroj" class="forma-kontrola" placeholder="Unesite vaš broj telefona">
+                        <input type="tel" id="telefonBroj" name="telefonBroj" class="forma-kontrola"
+                               placeholder="Unesite vaš broj telefona"
+                               required minlength="6" maxlength="20"
+                               pattern="[0-9+\(\)\s\/\-]{6,20}"
+                               title="Najmanje 6 cifara. Dozvoljeni su i znaci + ( ) / - i razmak.">
                         <div id="telefonGreska" class="poruka-greske"></div>
                     </div>
 
                     <div class="forma-grupa">
                         <label for="porukaTekst">Vaša Poruka / Upit za projekat</label>
-                        <textarea id="porukaTekst" class="forma-kontrola" rows="5" placeholder="Opišite šta vas zanima..."></textarea>
+                        <textarea id="porukaTekst" name="porukaTekst" class="forma-kontrola" rows="5"
+                                  placeholder="Opišite šta vas zanima..."
+                                  required minlength="10" maxlength="1000"
+                                  title="Opišite svoj upit u najmanje 10 karaktera."></textarea>
                         <div id="porukaGreska" class="poruka-greske"></div>
                     </div>
 
