@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="css/stil.css">
     <link rel="icon" href="assets/slike/logo.png" type="image/png">
     
-        <script src="assets/react/react.development.js"></script>
-        <script src="assets/react/react-dom.development.js"></script>
-        <script src="assets/react/babel.min.js"></script>
+        <script src="assets/reakt/reakt.razvojna.js"></script>
+        <script src="assets/reakt/reakt-dom.razvojna.js"></script>
+        <script src="assets/reakt/babel.prevodilac.js"></script>
 </head>
 <body>
 
@@ -34,7 +34,7 @@
                             <a href="usluge-konsultacije.html">Konsultacije</a>
                         </div>
                     </li>
-                    <li><a href="kalkulator.html" class="active">Kalkulator</a></li>
+                    <li><a href="kalkulator.html" class="active">Kalkulator <span class="oznaka-reakt">React</span></a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </nav>
@@ -52,9 +52,33 @@
 
     <main class="glavni-sadrzaj">
         <h1>Kalkulator Troškova Instalacije</h1>
+
+        <section class="reakt-najava" aria-labelledby="reakt-naslov">
+            <span class="reakt-znak" aria-hidden="true">&#9883;</span>
+            <div class="reakt-najava-tekst">
+                <h2 id="reakt-naslov">React je primenjen na ovoj stranici &mdash; <code>kalkulator.html</code></h2>
+                <p>
+                    Kalkulator ispod nije pisan običnim HTML-om, već je React komponenta
+                    <code>&lt;KalkulatorTroskova /&gt;</code>. React je iscrtava u prazan element
+                    <code>&lt;div id="reakt-koren"&gt;&lt;/div&gt;</code> pozivom
+                    <code>ReactDOM.createRoot(...).render(...)</code>, pa je sve unutar isprekidanog
+                    okvira generisao React, a ne autor rukom u HTML-u.
+                </p>
+                <ul class="reakt-lista">
+                    <li><strong>Stranica sa React-om:</strong> jedino <code>kalkulator.html</code>; ostale stranice sajta rađene su čistim HTML-om, CSS-om i JavaScript-om.</li>
+                    <li><strong>Korišćene biblioteke:</strong> <code>assets/reakt/reakt.razvojna.js</code>, <code>assets/reakt/reakt-dom.razvojna.js</code> i <code>assets/reakt/babel.prevodilac.js</code>.</li>
+                    <li><strong>Stanje komponente:</strong> šest <code>React.useState</code> promenljivih &mdash; kvadratura, broj prostorija, četiri modula i izračunata cena.</li>
+                    <li><strong>Reaktivnost:</strong> pri svakoj promeni klizača, polja ili čekiranja React sam ponovo iscrtava komponentu, bez ručnog menjanja DOM-a.</li>
+                </ul>
+            </div>
+        </section>
+
         <p>Izračunajte okvirnu cenu opreme i instalacije smart home sistema prilagođenog vašim potrebama.</p>
 
-        <div id="react-koren"></div>
+        <div class="reakt-zona">
+            <span class="reakt-zona-oznaka">React komponenta &lt;KalkulatorTroskova /&gt;</span>
+            <div id="reakt-koren"></div>
+        </div>
     </main>
 
     <footer>
@@ -123,7 +147,7 @@
                         max="300" 
                         value={kvadratura} 
                         onChange={(e) => setKvadratura(Number(e.target.value))}
-                        className="range-slider"
+                        className="klizac-opsega"
                     />
                 </div>
 
@@ -144,7 +168,7 @@
                 <div className="kalkulator-opcije">
                     <h3>Sistemi i Moduli:</h3>
                     
-                    <label className="opcija-checkbox">
+                    <label className="opcija-stavka">
                         <input 
                             type="checkbox" 
                             checked={izabranaRasveta} 
@@ -153,7 +177,7 @@
                         Pametna rasveta (moduli i dimeri)
                     </label>
 
-                    <label className="opcija-checkbox">
+                    <label className="opcija-stavka">
                         <input 
                             type="checkbox" 
                             checked={izabranaBezbednost} 
@@ -162,7 +186,7 @@
                         Bezbednosni sistem (alarmi i nadzor)
                     </label>
 
-                    <label className="opcija-checkbox">
+                    <label className="opcija-stavka">
                         <input 
                             type="checkbox" 
                             checked={izabranaKlimatizacija} 
@@ -171,7 +195,7 @@
                         Pametno upravljanje grejanjem / klimom
                     </label>
 
-                    <label className="opcija-checkbox">
+                    <label className="opcija-stavka">
                         <input 
                             type="checkbox" 
                             checked={izabraneRoletne} 
@@ -196,7 +220,7 @@
         );
     }
 
-    const koren = ReactDOM.createRoot(document.getElementById('react-koren'));
+    const koren = ReactDOM.createRoot(document.getElementById('reakt-koren'));
     koren.render(<KalkulatorTroskova />);
 </script>
 </body>

@@ -602,7 +602,7 @@ body.tamna-tema .forma-kontrola {
     margin-bottom: 0.5rem;
 }
 
-.range-slider {
+.klizac-opsega {
     width: 100%;
     accent-color: var(--sekundarna-boja);
     height: 6px;
@@ -613,7 +613,7 @@ body.tamna-tema .forma-kontrola {
     margin: 1.5rem 0;
 }
 
-.opcija-checkbox {
+.opcija-stavka {
     display: block;
     padding: 0.6rem 0;
     cursor: pointer;
@@ -621,11 +621,11 @@ body.tamna-tema .forma-kontrola {
     transition: color var(--prelaz);
 }
 
-.opcija-checkbox:hover {
+.opcija-stavka:hover {
     color: var(--sekundarna-boja);
 }
 
-.opcija-checkbox input {
+.opcija-stavka input {
     margin-right: 0.8rem;
     width: 18px;
     height: 18px;
@@ -653,6 +653,122 @@ body.tamna-tema .forma-kontrola {
     font-size: 0.85rem;
     opacity: 0.6;
     margin-top: 0.5rem;
+}
+
+/* ===== Oznaka stranice na kojoj je primenjen React (kalkulator.html) ===== */
+.oznaka-reakt {
+    display: inline-block;
+    margin-left: 0.35rem;
+    padding: 0.05rem 0.45rem;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.7;
+    color: var(--akcentna-boja);
+    border: 1px solid var(--akcentna-boja);
+    border-radius: 999px;
+    vertical-align: middle;
+}
+
+.reakt-najava {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-left: 5px solid var(--akcentna-boja);
+    border-radius: var(--border-radius);
+    box-shadow: var(--senka);
+}
+
+.reakt-najava-tekst {
+    flex: 1;
+    min-width: 240px;
+}
+
+.reakt-znak {
+    flex-shrink: 0;
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--akcentna-boja);
+}
+
+.reakt-najava h2 {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+    color: var(--sekundarna-boja);
+}
+
+.reakt-najava p {
+    font-size: 0.92rem;
+}
+
+.reakt-lista {
+    margin: 0.8rem 0 0 1.1rem;
+    font-size: 0.88rem;
+}
+
+.reakt-lista li {
+    margin-bottom: 0.35rem;
+}
+
+.reakt-najava code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85em;
+    padding: 0.1rem 0.35rem;
+    border-radius: 5px;
+    background: rgba(6, 182, 212, 0.12);
+    color: var(--sekundarna-boja);
+    white-space: nowrap;
+}
+
+/* Isprekidani okvir jasno izdvaja deo stranice koji iscrtava React */
+.reakt-zona {
+    position: relative;
+    margin-top: 2.75rem;
+    padding: 2.25rem 1.25rem 1.25rem;
+    border: 2px dashed var(--akcentna-boja);
+    border-radius: var(--border-radius);
+}
+
+.reakt-zona-oznaka {
+    position: absolute;
+    top: -0.9rem;
+    left: 1.5rem;
+    padding: 0.15rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--tekst-svetli);
+    background: var(--akcentna-boja);
+    border-radius: 999px;
+}
+
+.reakt-zona .kalkulator-kontejner {
+    margin-top: 0;
+}
+
+@media (max-width: 600px) {
+    .reakt-najava {
+        padding: 1.25rem;
+    }
+
+    .reakt-zona {
+        padding: 1.25rem 0.85rem;
+    }
+
+    .reakt-zona-oznaka {
+        position: static;
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
 }
 
 footer {
